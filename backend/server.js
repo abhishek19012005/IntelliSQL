@@ -27,7 +27,13 @@ app.get('/', (req, res) => {
         message: 'IntelliSQL Backend Running'
     });
 });
-
+app.get('/health', (req, res) => {
+    res.json({
+        success: true,
+        port: process.env.PORT,
+        host: process.env.DB_HOST
+    });
+});
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, '0.0.0.0', () => {
