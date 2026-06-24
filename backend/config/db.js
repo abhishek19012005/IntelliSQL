@@ -10,8 +10,6 @@ const poolConfig = {
     queueLimit: 0
 };
 
-// Create a connection pool that doesn't specify a database initially,
-// allowing us to switch databases dynamically per request using connection.query(`USE ${db}`)
 const pool = mysql.createPool(poolConfig);
 
 module.exports = pool;
